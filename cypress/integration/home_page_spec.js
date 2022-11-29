@@ -1,6 +1,6 @@
 describe('Home page', () => {
     it('has a title', () => {
       cy.visit('/')
-      cy.get('.title').should('contain', 'No Zoom at the Inn')
+      cy.get('#title').contains('No Zoom at the Inn')
     })
 })
