@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www",
+    "test": "jest",
+    "test:integration": "cypress run",
+    "test:unit": "jest",
+    "start:test": "PORT=3030 npm start"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -14,6 +18,14 @@
     "hbs": "^4.1.0",
     "http-errors": "~1.6.3",
     "jade": "^0.29.0",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "cypress": "^9.5.1"
+  },
+  "nodemonConfig": {
+    "ext": "js,hbs"
   }
 }

@@ -10,11 +10,10 @@ var usersRouter = require('./routes/users');
 var app = express();
 // view engine setup
 var hbs = require('hbs');
+// hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
-
-hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
 
 app.use(logger('dev'));
 app.use(express.json());
