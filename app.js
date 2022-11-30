@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var listsRouter = require('./routes/lists');
 var sessionsRouter = require('./routes/sessions');
 
 var app = express();
@@ -24,6 +25,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// SETUP ROUTES HERE
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/lists', listsRouter);
 // sessions
 app.use(
   session({
