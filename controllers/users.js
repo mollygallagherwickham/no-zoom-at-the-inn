@@ -8,23 +8,21 @@ const UsersController = {
 
   Create: (req, res, next) => {
 
-    const obj = {
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      email: req.body.email,
-      password: req.body.password,
-      }
-
-      const user = new User(obj)
+      const user = new User(req.body)
 
       user.save((err)=>{
         if(err){
             throw err
         }
-        console.log(req.body.first_name)
-        res.redirect("/")
+        User.find({email: req.body.email, password: req.body.password}).then((result)=>{
+            if(result){
+                console.log("stored")
+                res.redirect("/")
+            }
+        })
       })
-    }
+      
   }
+}
 
 module.exports = UsersController
