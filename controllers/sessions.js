@@ -25,8 +25,6 @@ const SessionsController = {
         // else password is correct, 
       } else {
         req.session.user = user;
-        console.log(user);
-        console.log(req.session.user);
         res.redirect("/");
       }
     });
