@@ -11,8 +11,6 @@ const ListsController = {
   },
   
   Create: (req, res) => {
-    console.log("##################")
-    console.log(req.session);
     // this creates new list with requested body parameters
     var list = new List({
       userID: req.session.user,
