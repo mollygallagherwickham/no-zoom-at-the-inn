@@ -1,4 +1,6 @@
-
+{{#if msg}}
+<script> alert('email already in use, please enter new email')</script>
+{{/if}}
 <form id="newform" action="/users" method="post" enctype=="multipart/form-data" >
   <label for="first_name">First Name: </label>
   <input id="first_name" type="text" name="first_name" value="" oninvalid="alert('You must enter your name')" required>
