@@ -13,10 +13,9 @@ const ListsController = {
   Create: (req, res) => {
     // this creates new list with requested body parameters
     var list = new List({
-      // userID: req.session.user,
+      userID: req.session.user,
       listName: req.body.listName
     })
-    console.log(list.listName)
     // if there's an error, returns error and redirects to homepage
     if (list.listName != "") {
       list.save((err) => {
