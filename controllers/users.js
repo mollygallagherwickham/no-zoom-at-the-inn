@@ -17,10 +17,9 @@ const UsersController = {
       
       const user = new User(obj)
       const email = user.email
-      console.log(req.session)
+
       User.findOne({ email }).then((email) => {
         if (!email) {
-          
           user.save((err) => {
             if (err) {
               throw err
@@ -31,27 +30,6 @@ const UsersController = {
           res.redirect('/users/new')
         }
       })
-    }
-      
-
-      
-  
-
-      
-      }
-      // user.save((err)=>{
-      //   if(err){
-      //       throw err
-      //   }
-      //   User.find({email: req.body.email, password: req.body.password}).then((result)=>{
-      //       if(result){
-      //           console.log("stored")
-      //           res.redirect("/")
-      //       }
-      //   })
-      //})
-      
-  //}
-// }
+    }}
 
 module.exports = UsersController
