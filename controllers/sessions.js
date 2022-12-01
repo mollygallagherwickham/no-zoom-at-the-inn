@@ -3,7 +3,7 @@ const User = require('../models/user')
 const SessionsController = {
   New: (req, res) => {
     if (req.session.user) {
-      res.redirect('/posts')
+      res.redirect('/')
     } else {
       res.render('sessions/new', { newUser: true })
     }
@@ -25,7 +25,7 @@ const SessionsController = {
         // else password is correct, 
       } else {
         req.session.user = user;
-        res.redirect("/posts");
+        res.redirect("/");
       }
     });
   },
