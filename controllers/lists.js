@@ -3,7 +3,17 @@ const User = require('../models/user')
 
 const ListsController = {
   View: (req, res) => {
-    res.render('lists/index', {});
+    if (req.session.user != undefined){
+      var myID = req.session.user._id;
+    } else {
+      var myID = "";
+    }
+    List.find({ userID: myID}, function (err, mylists) {
+      if (err) {
+        throw err;
+      }
+      res.render("lists/index", { lists: mylists });
+    });
   },
   
   New: (req, res) => {
