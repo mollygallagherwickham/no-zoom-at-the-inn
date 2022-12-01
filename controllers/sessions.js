@@ -10,7 +10,6 @@ const SessionsController = {
   },
 
   Create: (req, res) => {
-    console.log("trying to log in");
     const email = req.body.email;
     const password = req.body.password;
 
@@ -33,7 +32,8 @@ const SessionsController = {
   Destroy: (req, res) => {
     console.log('logging out')
     if (req.session.user && req.cookies.user_sid) {
-      res.clearCookie('user_sid')
+      res.clearCookie('user_sid');
+      res.redirect('/')
     }
     res.redirect('/sessions/new')
   }
