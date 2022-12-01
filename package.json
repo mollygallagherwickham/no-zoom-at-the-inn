@@ -10,6 +10,7 @@
     "start:test": "PORT=3030 MONGODB_URL='mongodb://0.0.0.0/makersmas_test' npm start"
   },
   "dependencies": {
+    "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",

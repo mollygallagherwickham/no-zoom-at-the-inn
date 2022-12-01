@@ -28,7 +28,8 @@ const UsersController = {
             res.status(201).redirect('/sessions/new')
           })
         } else if (user.email !== email) {
-          res.redirect('/users/new')
+          console.log('had this already')
+          res.render('users/new', { msg: 'email has been used' });
         }
       })
     }}
