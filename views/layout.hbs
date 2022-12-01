@@ -1,13 +1,38 @@
 <html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 <body>
+{{!-- Code for nav bar below --}}
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+        <ul class='nav navbar-nav'>
+            <li><a id='nav-home' href="/">Home</a></li>
+            {{#if newUser}}
+            <li><a id='login-link' href="/sessions/new">Login</a></li>
+            <li><a id='signup-link' href="/users/new">Sign up</a></li>
+        </ul>
+            {{else}} 
+            <li><a id='lists-link' href="/lists">Lists</a></li>
+        </ul>
+        <div class ="logOutButton"><form class="form-inline" action='/sessions?_method=DELETE' method='POST'><input type="submit" value="Log Out"></form></div> 
+        {{/if}}
+        </div>
+    </nav>
 
+
+
+
+<br>
+<br>
+<br>
 <h1 id="title"> No Zoom at the Inn</h1>
 
 <p id="countdown"></p>
 <script>
     // Set the date we're counting down to
     var countDownDate = new Date("Dec 26, 2022 00:00:00").getTime();
- 
     // Get today's date and time
     var now = new Date().getTime();
     // Find the distance between now and the count down date

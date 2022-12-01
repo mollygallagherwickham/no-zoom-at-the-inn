@@ -20,6 +20,7 @@ const UsersController = {
 
       User.findOne({ email }).then((email) => {
         if (!email) {
+          req.session.user = user
           user.save((err) => {
             if (err) {
               throw err
