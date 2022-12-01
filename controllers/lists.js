@@ -28,7 +28,18 @@ const ListsController = {
     } else {
       res.redirect("/lists/new");
     }
-  }, 
+  },
+  
+  AddTask: (res, req) => {
+    List.findOneAndUpdate({ _id: req.body.id }, { $push: { tasks: {task: req.body.tasks, isComplete: false} } }, { returnNewDocument: true }).exec((err) => {
+      if (err) {
+        throw err
+      }
+      res.status(200).redirect('/lists')
+    })
+  }
+
 };
+
 
 module.exports = ListsController;

@@ -1,1 +1,23 @@
+
 <a id="new-list" href="/lists/new">New List</a>
+
+<button id="add-task" onclick="openForm()">Add a Task</button>
+<div id="add-task-form">
+    <form id="add-a-task" action="/lists" method="post">
+        <label for="task-name">Task</label>
+        <input id="task-name" type="text" name="task" value="" required>
+
+        <button id="submit-task" type="submit" onclick="closeForm()">Submit Task</button>
+        
+    </form>
+</div>
+
+<script>
+    function openForm() {
+        document.getElementById("add-task-form").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("add-task-form").style.display = "none";
+    }
+</script>
