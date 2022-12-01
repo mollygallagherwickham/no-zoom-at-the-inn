@@ -10,9 +10,9 @@ a {
 /* The popup form - hidden by default */
 #add-task-form {
   display: none;
-  position: fixed;
+  /* position: fixed; */ */
   bottom: 0;
   right: 15px;
   border: 3px solid #f1f1f1;
-  z-index: 9;
+  /* z-index: 9; */
 }
