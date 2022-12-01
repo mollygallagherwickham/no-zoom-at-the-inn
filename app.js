@@ -24,11 +24,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// SETUP ROUTES HERE
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/lists', listsRouter);
-// sessions
 app.use(
   session({
     key: 'user_sid',
@@ -58,9 +53,10 @@ const sessionChecker = (req, res, next) => {
   }
 }
 
-// routes
+// SET UP routes HERE
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/lists', listsRouter);
 app.use('/sessions', sessionsRouter);
 
 // catch 404 and forward to error handler
