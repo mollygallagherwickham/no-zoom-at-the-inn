@@ -40,11 +40,8 @@ const ListsController = {
     }
   },
   
-  AddTask: (res, req) => {
-    
-    // console.log("########")
-    // console.log(req.body.list.id)
-    List.findOneAndUpdate({ _id: req.body.id }, { $push: { tasks: {task: req.body.tasks, isComplete: false} } }, { returnNewDocument: true }).exec((err) => {
+  AddTask: (req, res) => {
+    List.findOneAndUpdate({ _id: req.body.listId }, { $push: { tasks: {task: req.body.tasks, isComplete: false} } }, { returnNewDocument: true }).exec((err) => {
       
       if (err) {
         
