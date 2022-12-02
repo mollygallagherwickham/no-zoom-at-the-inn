@@ -1,5 +1,5 @@
 describe('Nav Bar', () => {
-    it('shows log in and sign up button when user is not logged in', () => {
+    xit('shows log in and sign up button when user is not logged in', () => {
       // sign up
       cy.visit("/");
       cy.url().should("include", "/");
@@ -19,7 +19,7 @@ describe('Nav Bar', () => {
     //   // result is the index page visit
     })
 
-    it('shows log out button when user is logged in', () => {
+    xit('shows log out button when user is logged in', () => {
         cy.visit("/users/new");
         cy.get("#email").type("someone@example.com");
         cy.get("#first_name").type("Someone");

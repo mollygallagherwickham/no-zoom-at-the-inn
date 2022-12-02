@@ -7,8 +7,8 @@
         document.getElementById("add-task-form" + id).style.display = "block";
     }
 
-    function closeForm() {
-        document.getElementById("add-task-form").style.display = "none";
+    function closeForm(id) {
+        document.getElementById("add-task-form" + id).style.display = "none";
     }
 </script>
 
@@ -16,13 +16,13 @@
     {{#each lists}}
     <div>
     <p>{{this.listName}}</p>
-    <button onclick="openForm('{{this._id}}')">Add a Task</button>
+    <button class="add-task-button" onclick="openForm('{{this._id}}')">Add a Task</button>
     <div id="add-task-form{{this._id}}" class="task-form">
     <form action="/lists/tasks" method="post">
         <label for="task-name">Task</label>
         <input id="task-name" type="text" name="tasks" value="" required>
         <input type="hidden" id="listId" name="listId" value="{{this._id}}">
-        <button id="submit-task" type="submit" onclick="closeForm()">Submit Task</button>   
+        <button id="submit-task" type="submit" onclick="closeForm('{{this._id}}')">Submit Task</button>   
     </form>
     </div>
     </div>

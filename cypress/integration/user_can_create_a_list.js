@@ -1,5 +1,5 @@
 describe('Link to list on homepage', () => {
-  it('user click on link to the list', () => {
+  xit('user click on link to the list', () => {
     cy.visit('/')
     cy.get('#lists-link').should('contain', 'View My Lists')
     cy.get('#lists-link').click();
@@ -7,7 +7,7 @@ describe('Link to list on homepage', () => {
     cy.contains('a', 'New List');
   })
 
-  it('user click on New List to create list', () => {
+  xit('user click on New List to create list', () => {
     cy.visit('/lists')
     cy.get('#new-list').click();
     cy.url().should('include', '/lists/new')
