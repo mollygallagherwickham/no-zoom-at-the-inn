@@ -20,6 +20,7 @@ const UsersController = {
 
       User.findOne({ email }).then((email) => {
         if (!email) {
+          req.session.user = user
           user.save((err) => {
             if (err) {
               throw err
@@ -27,9 +28,31 @@ const UsersController = {
             res.status(201).redirect('/sessions/new')
           })
         } else if (user.email !== email) {
-          res.redirect('/users/new')
+          console.log('had this already')
+          res.render('users/new', { msg: 'email has been used' });
         }
       })
-    }}
-
+    },
+    Profile: (req, res) => {
+        
+      User.find({ _id : `${req.session.user._id}`
+      })
+          .exec((err) => {
+        if (err) {
+          throw err
+        }
+        res.render('users/profile', {  
+          first_name: req.session.user.first_name, 
+          last_name: req.session.user.last_name,  
+          email: req.session.user.email,
+          wish_list: req.session.user.wish_list,
+          dietary_requirements: req.session.user.dietary_requirements,
+          friends: req.session.user.friends
+        })
+      })
+    }
+  }
+    
+  
+  
 module.exports = UsersController

@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
+const methodOverride = require('method-override')
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -23,6 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'))
 
 app.use(
   session({
@@ -56,7 +59,7 @@ const sessionChecker = (req, res, next) => {
 // SET UP routes HERE
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/lists', listsRouter);
+app.use('/lists', sessionChecker, listsRouter);
 app.use('/sessions', sessionsRouter);
 
 // catch 404 and forward to error handler
