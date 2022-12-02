@@ -15,16 +15,16 @@
 <div id="lists">
     {{#each lists}}
     <div>
-    <p>{{this.listName}}</p>
-    <button class="add-task-button" onclick="openForm('{{this._id}}')">Add a Task</button>
-    <div id="add-task-form{{this._id}}" class="task-form">
-    <form action="/lists/tasks" method="post">
-        <label for="task-name">Task</label>
-        <input id="task-name" type="text" name="tasks" value="" required>
-        <input type="hidden" id="listId" name="listId" value="{{this._id}}">
-        <button id="submit-task" type="submit" onclick="closeForm('{{this._id}}')">Submit Task</button>   
-    </form>
-    </div>
+        <p>{{this.listName}}</p>
+        <button class="add-task-button" onclick="openForm('{{this._id}}')">Add a Task</button>
+        <div id="add-task-form{{this._id}}" class="task-form">
+            <form action="/lists/tasks" method="post">
+                <label for="task-name">Task</label>
+                <input id="task-name" type="text" name="tasks" value="" required>
+                <input type="hidden" id="listId" name="listId" value="{{this._id}}">
+                <button id="submit-task" type="submit" onclick="closeForm('{{this._id}}')">Submit Task</button>   
+            </form>
+        </div>
     </div>
     {{/each}}
 </div>

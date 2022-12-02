@@ -18,12 +18,11 @@ describe('When a user has created a list', () => {
         cy.get('#listName').type('Card List');
         cy.get('#submit').click();
         cy.url().should('include', '/lists');
-        cy.get('#lists').should('have.text', 'Card List')
+        cy.get('#lists').contains('Card List')
 
         // Add task to first list
-        // cy.visit('/lists');
-        // cy.contains('Add a Task').click()
-        // cy.get('#lists form input').type('Todo item');
-        // cy.get('#lists form button').click();
+        cy.contains('Add a Task').click()
+        cy.get('#task-name').type('Todo item');
+        cy.get('#lists form button').click();
     });
 })
