@@ -1,0 +1,15 @@
+
+<h1>{{ first_name }} </h1>
+
+
+
+<p>Dietary Requirements: {{dietary_requirements}}</p>
+
+<form id="dietary-requirements" action="/users/dietaryrequirements" method="post">
+
+     <textarea placeholder="Edit your dietary requirements" id="message" type="text" name="dietary-requirements" value=""rows="1" cols="50"></textarea>
+
+      {{!-- <input type="hidden" id="hiddenbutton" name="id" value={{updated_dietary_requirements}}> --}}
+      <input type="hidden" id="hiddenbutton" name="dietary_requirements" value="">
+     <br><button type="submit" id="comment_button">Submit</button>
+     </form>

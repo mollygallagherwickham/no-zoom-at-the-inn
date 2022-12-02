@@ -32,6 +32,41 @@ const UsersController = {
           res.render('users/new', { msg: 'email has been used' });
         }
       })
-    }}
+    },
+
+    Profile: (req, res) => {
+        
+      User.find({ _id : `${req.session.user._id}`
+      })
+          .exec((err) => {
+        if (err) {
+          throw err
+        }
+        res.render('users/profile', {  
+          first_name: req.session.user.first_name, 
+          last_name: req.session.user.last_name,  
+          email: req.session.user.email,
+          wish_list: req.session.user.wish_list,
+          dietary_requirements: req.session.user.dietary_requirements,
+          friends: req.session.user.friends
+        })
+      })
+    },
+
+  DietaryRequirements: (req, res) => {
+
+    User.findOneAndUpdate({ _id: req.body.id }, { $push: { dietary_requirements: req.body.dietary_requirements} }, { returnNewDocument: true }).exec((err, docs) => {
+      if (err) {
+        throw err
+      }
+      console.log('it is redirecting...');
+      console.log(docs);
+      res.status(200).redirect('/users/profile');
+    })
+    }
+
+
+  
+}
 
 module.exports = UsersController
