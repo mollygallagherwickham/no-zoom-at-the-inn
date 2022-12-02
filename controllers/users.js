@@ -54,13 +54,18 @@ const UsersController = {
     },
 
   DietaryRequirements: (req, res) => {
-
-    User.findOneAndUpdate({ _id: req.body.id }, { $push: { dietary_requirements: req.body.dietary_requirements} }, { returnNewDocument: true }).exec((err, docs) => {
+    // const user_id = req.session.user._id;
+    // const diet_req = req.body.dietary_requirements;
+    User.findOneAndUpdate({ _id: req.session.user._id }, { $push: { dietary_requirements: req.session.user.dietary_requirements} }, { returnNewDocument: true }).exec((err) => {
       if (err) {
         throw err
       }
+
+      console.log(req.session.user._id);
+      console.log(req.session.user.dietary_requirements);
       console.log('it is redirecting...');
-      console.log(docs);
+      console.log(req.body.dietary_requirements);
+      console.log(req.session.user.dietary_requirements);
       res.status(200).redirect('/users/profile');
     })
     }

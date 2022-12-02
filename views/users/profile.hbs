@@ -3,12 +3,11 @@
 
 
 
-<p>Dietary Requirements: {{dietary_requirements}}</p>
+<p>Current dietary Requirements: {{dietary_requirements}}</p>
 
-<form id="dietary-requirements" action="/users/dietaryrequirements" method="post">
-
+<form id="dietary-requirements" action="/users/dietaryrequirements" method="post" enctype=="multipart/form-data">
+        <label for="dietary-requirements">Enter dietary requirements: </label>
      <textarea placeholder="Edit your dietary requirements" id="message" type="text" name="dietary-requirements" value=""rows="1" cols="50"></textarea>
-
       {{!-- <input type="hidden" id="hiddenbutton" name="id" value={{updated_dietary_requirements}}> --}}
       <input type="hidden" id="hiddenbutton" name="dietary_requirements" value="">
      <br><button type="submit" id="comment_button">Submit</button>
