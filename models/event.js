@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const User = require('../models/user')
 
 const EventSchema = new mongoose.Schema({
   eventName: String,

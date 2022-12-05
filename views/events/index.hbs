@@ -1,0 +1,9 @@
+<a class="new-event-link" href="/events/new">Create new event</a>
+
+<ul class="events">
+    {{#each events}}
+<li>{{this.eventName}} </li>
+<li>{{this.date}} </li>
+<li>{{this.organiser_id.first_name}} </li>
+    {{/each}}
+</ul>
