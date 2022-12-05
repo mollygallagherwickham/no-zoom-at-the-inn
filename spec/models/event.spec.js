@@ -13,7 +13,7 @@ describe('Event model', () => {
   it('event has a name', () => {
     const event = new Event({
       eventName: 'Christmas Lunch',
-      date: '2022-12-25',
+      eventDate: '2022-12-25',
     })
     expect(event.eventName).toEqual('Christmas Lunch')
   })
@@ -21,9 +21,9 @@ describe('Event model', () => {
   it('event has a date', () => {
     const event = new Event({
       eventName: 'Christmas Lunch',
-      date: '2022-12-25',
+      eventDate: '2022-12-25',
     })
-    expect(event.date).toEqual('2022-12-25')
+    expect(event.eventDate).toEqual('2022-12-25')
   })
 
   
