@@ -22,7 +22,7 @@ describe('Sign in page', () => {
       // result is the index page visit
       
       cy.url().should("include", "/");
-      cy.contains("View My Lists");
+      cy.contains("Hey, Someone.");
     })
 
     it('does not allow user to log in due to incorrect password', () => {
