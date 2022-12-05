@@ -15,7 +15,7 @@
 <div id="lists">
     {{#each lists}}
     <div>
-        <p>{{this.listName}}</p>
+        <a href="/lists/view?list={{this._id}}">{{this.listName}}</a>
         <button class="add-task-button" onclick="openForm('{{this._id}}')">Add a Task</button>
         <div id="add-task-form{{this._id}}" class="task-form">
             <form action="/lists/tasks" method="post">

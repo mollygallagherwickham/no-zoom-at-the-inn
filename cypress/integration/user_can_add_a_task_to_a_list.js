@@ -24,5 +24,9 @@ describe('When a user has created a list', () => {
         cy.contains('Add a Task').click()
         cy.get('#task-name').type('Todo item');
         cy.get('#lists form button').click();
+
+        // Click on list to view that list
+        cy.contains('Card List').click();
+        cy.url().should('include', '/lists/view?');
     });
 })
