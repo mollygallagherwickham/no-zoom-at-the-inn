@@ -1,12 +1,30 @@
-<div>
+<div id="list-container">
+  <h1>{{list.listName}}</h1>
    {{#each list.tasks}}
     <div>
+      <input type="checkbox" class="check" id="check{{this._id}}" value="" onclick="updateDB('{{this._id}}')">
       {{#if this.isComplete}}
-        <input type="checkbox" id="this._id" value="" checked>
+        <script>document.getElementById('check{{this._id}}').checked=true</script>
       {{else}}
-        <input type="checkbox" id="this._id" value="">
+        <script>document.getElementById('check{{this._id}}').checked=false</script>
       {{/if}}
-      <label for="this._id"> {{this.task}}</label><br>
+      <label for="check{{this._id}}"> {{this.task}}</label><br>
     </div>
     {{/each}}
 </div>
+
+<script>
+  function updateDB(id) {
+    checked = document.getElementById("check" + id).checked
+
+    let data = {listID: '{{list._id}}', taskID: id, checked: checked};
+
+    fetch("/lists/view", {
+      method: "POST",
+      headers: {'Content-Type': 'application/json'}, 
+      body: JSON.stringify(data)
+    }).then(res => {
+      console.log("Request complete! response:", res);
+    });
+  }
+</script>

@@ -55,11 +55,22 @@ const ListsController = {
     List.findOne({ _id: req.query.list }, function (err, mylist) {
       res.render('lists/view', { list: mylist });
     });
+  },
+
+  ItemChecked: (req, res) => {
+    var tasks = [];
+    List.findOne({ _id: req.body.listID }, function (err, thislist) {
+      tasks = thislist.tasks;
+      const result = tasks.filter(task => task._id == req.body.taskID);
+      result[0].isComplete = req.body.checked;
+      List.findOneAndUpdate({ _id: req.body.listID }, { $set: { tasks: tasks } }).exec((err) => {
+        if (err) {
+          throw err
+        }
+        res.status(200).redirect('/lists/view')
+      })
+    });
   }
 };
 
 module.exports = ListsController;
-
-
-
-
