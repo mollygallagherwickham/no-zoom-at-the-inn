@@ -1,10 +1,10 @@
 describe('Sign in page', () => {
-    xit('has a form', () => {
+    it('has a form', () => {
       cy.visit('/sessions/new')
       cy.get('#new-session-form').contains('Email')
     })
 
-    xit('allows user to log in', () => {
+    it('allows user to log in', () => {
       // sign up
       cy.visit("/users/new");
       cy.get("#email").type("someone@example.com");
@@ -25,7 +25,7 @@ describe('Sign in page', () => {
       cy.contains("View My Lists");
     })
 
-    xit('does not allow user to log in due to incorrect password', () => {
+    it('does not allow user to log in due to incorrect password', () => {
       // sign up
       cy.visit("/users/new");
       cy.get("#email").type("someone@example.com");
@@ -45,7 +45,7 @@ describe('Sign in page', () => {
       cy.contains("Email");
     })
 
-    xit('does not allow user to log in due to user not existing', () => {
+    it('does not allow user to log in due to user not existing', () => {
       // sign up
       cy.visit("/users/new");
       cy.get("#email").type("someone@example.com");

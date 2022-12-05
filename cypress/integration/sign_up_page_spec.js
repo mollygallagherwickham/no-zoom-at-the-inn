@@ -3,7 +3,7 @@ function random(){
   }
   
   describe('Registration', () => {
-    xit('A user signs up with all inputs filled in and is redirected to sign in', () => {
+    it('A user signs up with all inputs filled in and is redirected to sign in', () => {
       // sign up
   
       cy.visit('/users/new')
@@ -22,7 +22,7 @@ function random(){
       cy.url().should('include', '/sessions/new')
     })
     
-    xit('A user can not sign up with the same email twice', () => {
+    it('A user can not sign up with the same email twice', () => {
       // sign up
   
       cy.visit('/users/new')

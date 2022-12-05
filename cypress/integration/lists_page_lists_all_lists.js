@@ -1,5 +1,5 @@
 describe('Lists page', () => {
-  xit('lists all the logged in users lists', () => {
+  it('lists all the logged in users lists', () => {
     // sign up
     cy.visit("/users/new");
     cy.get("#email").type("someone@example.com");

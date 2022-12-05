@@ -1,5 +1,5 @@
 describe('Layout page', () => {
-    xit('gives 1 sleep on xmas eve', () => {
+    it('gives 1 sleep on xmas eve', () => {
         const now = new Date(2022, 11, 24, 1) // month is 0-indexed 
         cy.clock(now)
         cy.visit('/')
@@ -7,7 +7,7 @@ describe('Layout page', () => {
              
     })
 
-    xit('gives 2 sleeps on xmas eve eve', () => {
+    it('gives 2 sleeps on xmas eve eve', () => {
         const now = new Date(2022, 11, 23, 1) // month is 0-indexed 
         cy.clock(now)
         cy.visit('/')
@@ -15,7 +15,7 @@ describe('Layout page', () => {
              
     })
 
-    xit('gives Merry Christmas on xmas day', () => {
+    it('gives Merry Christmas on xmas day', () => {
         const now = new Date(2022, 11, 25, 1) // month is 0-indexed 
         cy.clock(now)
         cy.visit('/')
@@ -23,7 +23,7 @@ describe('Layout page', () => {
              
     })
 
-    xit('gives Put your tinsel away after Christmas', () => {
+    it('gives Put your tinsel away after Christmas', () => {
         const now = new Date(2022, 11, 26, 1) // month is 0-indexed 
         cy.clock(now)
         cy.visit('/')
