@@ -17,3 +17,26 @@ a {
   border: 3px solid #f1f1f1;
   /* z-index: 9; */
 }
+
+.countdowns{
+  color: red;
+  padding-top: 17px;
+  float: right;
+}
+
+.logOutButton{
+  float: right;
+  padding-top: 15px;
+}
+
+.logout-input{
+  background-color: #f8f8f8;
+  border: none;
+  color: #777777;
+}
+
+.logout-input:hover{
+  background-color: #f8f8f8;
+  border: none;
+  color: black;
+}
