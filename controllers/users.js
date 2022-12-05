@@ -37,41 +37,51 @@ const UsersController = {
     Profile: (req, res) => {
         
       User.find({ _id : `${req.session.user._id}`
-      })
-          .exec((err) => {
+      }).exec((err, users) => {
         if (err) {
           throw err
         }
-        res.render('users/profile', {  
+        res.render('users/profile', { users,
           first_name: req.session.user.first_name, 
           last_name: req.session.user.last_name,  
           email: req.session.user.email,
           wish_list: req.session.user.wish_list,
           dietary_requirements: req.session.user.dietary_requirements,
           friends: req.session.user.friends
+          
         })
       })
     },
 
   DietaryRequirements: (req, res) => {
-    // const user_id = req.session.user._id;
-    // const diet_req = req.body.dietary_requirements;
-    User.findOneAndUpdate({ _id: req.session.user._id }, { $push: { dietary_requirements: req.session.user.dietary_requirements} }, { returnNewDocument: true }).exec((err) => {
-      if (err) {
-        throw err
-      }
+    
+    User.updateOne({ _id: req.session.user._id }
+      , {dietary_requirements: req.body.dietary_requirements})
+        .exec((err, docs) => {
+      if (err){
+          throw err
+      } else {
+          req.session.user.dietary_requirements = req.body.dietary_requirements;
+          console.log("Updated Docs : ", docs);
+          res.status(200).redirect('/users/profile');
+      }})
+    },
 
-      console.log(req.session.user._id);
-      console.log(req.session.user.dietary_requirements);
-      console.log('it is redirecting...');
-      console.log(req.body.dietary_requirements);
-      console.log(req.session.user.dietary_requirements);
-      res.status(200).redirect('/users/profile');
-    })
-    }
+    // needs editing!
+    WishList: (req, res) => {
 
-
-  
+      User.findOneAndUpdate({ _id: req.session.user._id }
+        , { $push: {wish_list: req.body.wish_list}}, { returnNewDocument: true })
+          .exec((err, docs) => {
+        if (err){
+            throw err
+        } else {
+          console.log('adding item to wish list')
+          req.session.user.wish_list = req.body.wish_list;
+          console.log("Updated Docs : ", docs);
+          res.status(200).redirect('/users/profile');
+        }})
+  }
 }
 
-module.exports = UsersController
+module.exports = UsersController;

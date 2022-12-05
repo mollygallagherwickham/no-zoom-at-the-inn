@@ -20,7 +20,7 @@ describe('Profile page add info', () => {
       cy.visit("users/profile");
 
       // fills in form
-      cy.get("#dietary-requirement").type("Vegetarian"); 
+      cy.get("#dietaryrequirements").type("Vegetarian"); 
       // submits
       cy.get("#submit").click();
 

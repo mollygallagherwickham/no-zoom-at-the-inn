@@ -30,6 +30,6 @@
     "jest": "^29.3.1"
   },
   "nodemonConfig": {
-    "ext": "js,hbs"
+    "ext": "js,hbs,.env"
   }
 }
