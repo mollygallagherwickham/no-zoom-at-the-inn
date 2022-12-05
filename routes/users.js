@@ -4,9 +4,13 @@ const router = express.Router()
 // connects to the controller
 const UsersController = require('../controllers/users')
 
+
 router.get('/new', UsersController.New)
-router.post('/', UsersController.Create)
+router.get('/all', UsersController.All)
+router.post('/addfriend', UsersController.AddFriend)
 router.get('/profile', UsersController.Profile)
+router.post('/', UsersController.Create)
+
 
 
 module.exports = router
