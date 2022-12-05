@@ -33,6 +33,7 @@ const UsersController = {
           res.render('users/new', { msg: 'email has been used' });
         }
       })
+
   },
 
   All: (req, res) => {
@@ -80,4 +81,25 @@ const UsersController = {
     }
 }
 
+    },
+    Profile: (req, res) => {
+        
+      User.find({ _id : `${req.session.user._id}`
+      })
+          .exec((err) => {
+        if (err) {
+          throw err
+        }
+        res.render('users/profile', {  
+          first_name: req.session.user.first_name, 
+          last_name: req.session.user.last_name,  
+          email: req.session.user.email,
+          wish_list: req.session.user.wish_list,
+          dietary_requirements: req.session.user.dietary_requirements,
+          friends: req.session.user.friends
+        })
+      })
+    }
+  }
+    
 module.exports = UsersController

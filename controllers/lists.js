@@ -26,6 +26,7 @@ const ListsController = {
       userID: req.session.user,
       listName: req.body.listName
     })
+
     // if there's an error, returns error and redirects to homepage
     if (list.listName != "") {
       list.save((err) => {
@@ -37,7 +38,25 @@ const ListsController = {
     } else {
       res.redirect("/lists/new");
     }
-  }, 
+  },
+  
+  AddTask: (req, res) => {
+    List.findOneAndUpdate({ _id: req.body.listId }, { $push: { tasks: {task: req.body.tasks, isComplete: false} } }, { returnNewDocument: true }).exec((err) => {
+      
+      if (err) {
+        
+        throw err
+      }
+      res.status(200).redirect('/lists')
+    })
+  }
+
 };
 
+
+
 module.exports = ListsController;
+
+
+
+
