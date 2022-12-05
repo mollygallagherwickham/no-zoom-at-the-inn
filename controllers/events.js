@@ -3,7 +3,7 @@ const User = require('../models/user')
 
 const EventsController = {
     Index: (req, res) => {
-        Event.find().populate('organiser_id').exec((err, events) => {
+        Event.find().sort({eventDate:1}).populate('organiser_id').exec((err, events) => {
             if (err) {
                 throw err
             }
@@ -20,7 +20,7 @@ const EventsController = {
         var event = new Event({
             organiser_id: req.session.user,
             eventName: req.body.eventName,
-            eventDate: req.body.date,
+            eventDate: req.body.eventDate,
             location: req.body.location
         })
 

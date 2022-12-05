@@ -1,8 +1,12 @@
 <br>
 <div class="new-event">
-<form id="new-event-form" action="/events" method="post">
-  <label for="eventName"> New event</label><br>
-  <input id="eventName" type="text" name="eventName" value="" required autofocus></input>
-  <input type="submit" value="Submit">
+<form id="new-event-form" action="/events/new" method="post">
+  <label for="eventName"> Event name</label><br>
+  <input id="eventName" type="text" name="eventName" value="" required autofocus></input><br>
+  <label for="eventDate"> Event date</label><br>
+  <input id="eventDate" type="date" name="eventDate" value="" required autofocus></input><br>
+  <label for="location"> Event location</label><br>
+  <input id="location" type="text" name="location" value="" required autofocus></input><br>
+  <input id="submit" type="submit" value="Submit">
 </form>
 </div>

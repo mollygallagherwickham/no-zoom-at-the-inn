@@ -2,8 +2,9 @@
 
 <ul class="events">
     {{#each events}}
-<li>{{this.eventName}} </li>
-<li>{{this.date}} </li>
-<li>{{this.organiser_id.first_name}} </li>
+<li class="eventNameClass">What?: {{this.eventName}} </li>
+<li>When?: {{this.eventDate}} </li>
+<li>Where?: {{this.location}} </li>
+<li>Who?: {{this.organiser_id.first_name}} </li><br><br>
     {{/each}}
 </ul>
