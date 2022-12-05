@@ -4,7 +4,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <link rel='stylesheet' href='./public/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 
 </head>
 <body>
@@ -20,8 +20,10 @@
             {{else}} 
             <li><a id='lists-link' href="/lists">Lists</a></li>
             <li><a id='add-friends-link' href="/users/all">All users</a></li>
+            <li><p id='countdown' class="countdowns"></p></li>
+
         </ul>
-        <div class ="logOutButton"><form class="form-inline" action='/sessions?_method=DELETE' method='POST'><input type="submit" value="Log Out"></form></div> 
+        <div class ="logOutButton"><form class="form-inline" action='/sessions?_method=DELETE' method='POST'><input  class="logout-input" type="submit" value="Log Out"></form></div> 
         {{/if}}
         </div>
     </nav>
@@ -47,10 +49,10 @@
 
     // Display the result in the element with id="coundown"
     if (days === 1) {
-        document.getElementById("countdown").innerHTML = days + " sleep";
+        document.getElementById("countdown").innerHTML = days + " Sleep until Christmas";
     }
     else if (days > 1) {
-        document.getElementById("countdown").innerHTML = days + " sleeps";
+        document.getElementById("countdown").innerHTML = days + " Sleeps until Christmas";
     }
     else if (days === 0) {
         document.getElementById("countdown").innerHTML = "Merry Christmas";
