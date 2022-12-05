@@ -49,11 +49,14 @@ const ListsController = {
       }
       res.status(200).redirect('/lists')
     })
+  },
+
+  ViewOne: (req, res) => {
+    List.findOne({ _id: req.query.list }, function (err, mylist) {
+      res.render('lists/view', { list: mylist });
+    });
   }
-
 };
-
-
 
 module.exports = ListsController;
 

@@ -1,0 +1,12 @@
+<div>
+   {{#each list.tasks}}
+    <div>
+      {{#if this.isComplete}}
+        <input type="checkbox" id="this._id" value="" checked>
+      {{else}}
+        <input type="checkbox" id="this._id" value="">
+      {{/if}}
+      <label for="this._id"> {{this.task}}</label><br>
+    </div>
+    {{/each}}
+</div>
