@@ -1,0 +1,23 @@
+<a class="new-song-link" href="/songs/new">Add new song</a>
+{{#each songs}}
+<p>Song Title: {{this.songTitle}}</p>
+<p>Artist Name: {{this.artistName}}</p>
+<p>Votes: {{this.votes}}</p>
+<button onclick="updateDB('{{this._id}}')">Vote</button>
+<br>
+{{/each}}
+<br>
+
+<script>
+  function updateDB(id) {
+    let data = { _id: id };
+
+    fetch("/songs/vote", {
+      method: "POST",
+      headers: {'Content-Type': 'application/json'}, 
+      body: JSON.stringify(data)
+    }).then(res => {
+      console.log("Request complete! response:", res);
+    });
+  }
+</script>

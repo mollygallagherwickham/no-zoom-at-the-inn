@@ -12,6 +12,7 @@ var usersRouter = require('./routes/users');
 var listsRouter = require('./routes/lists');
 var sessionsRouter = require('./routes/sessions');
 var eventsRouter = require('./routes/events');
+var songsRouter = require('./routes/songs');
 
 var app = express();
 // view engine setup
@@ -63,6 +64,7 @@ app.use('/users', usersRouter);
 app.use('/lists', sessionChecker, listsRouter);
 app.use('/events', sessionChecker, eventsRouter);
 app.use('/sessions', sessionsRouter);
+app.use('/songs', songsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
