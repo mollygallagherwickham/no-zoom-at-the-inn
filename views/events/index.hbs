@@ -1,7 +1,11 @@
 <a class="new-event-link" href="/events/new">Create new event</a>
 <h2>My Events</h2>
-
+{{current_session}}
+{{#each events}}
+    {{current_session}}
+{{/each}}
 <h2>All Events</h2>
+
 <ul class="events">
     {{#each events}}
     <li class="eventNameClass">What?: {{this.eventName}} </li>
@@ -31,6 +35,11 @@
         })
     </script>
     <br><br>
+    <div class="comments">
+      {{#each this.attendees}}
+        <li class="commenter-comment">{{this.attendees}}</li><br>
+      {{/each}}
+    </div>
     {{/each}}
 </ul>
 

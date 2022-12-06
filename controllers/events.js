@@ -78,22 +78,16 @@ const EventsController = {
       MyEvents: (req, res) => {
         Event.find({ organiser_id : `${req.session.user._id}`
         }).sort({eventDate:1}).populate('organiser_id')
-            .exec((err, posts) => {
+            .exec((err, events) => {
           if (err) {
             throw err
           }
-          
-          res.render('/events', { events, 
+          res.render('events/mine', { events, 
             current_organiser: req.session.user.first_name, 
-            current_session: req.session.user._id
-          })
+            current_session: req.session.user._id })
           
         })
       }
-
-    
-
-
 }
 
 module.exports = EventsController;
