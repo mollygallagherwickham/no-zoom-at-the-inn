@@ -39,12 +39,19 @@ const UsersController = {
 
     
   All: (req, res) => {
-    console.log(req.session.user._id)
     User.find({_id : {'$ne': req.session.user._id}}).exec((err, users) => {
       if (err) {
         throw err
       }
-      res.render('users/all', { users, current_user: req.session.user.first_name, current_session: req.session.user._id, user_first_name: req.body.first_name, user_last_name: req.body.user_last_name })
+      users.forEach(myFunction);
+        function myFunction(record) {
+          if (record.friends.includes(req.session.user._id)) {            
+            record.buttonText = "Remove Friend";
+          }else {
+            record.buttonText = "Add Friend";
+          }
+        }
+      res.render('users/all', { users: users, current_user: req.session.user.first_name, current_session: req.session.user._id, user_first_name: req.body.first_name, user_last_name: req.body.user_last_name })
     })
   },
 
