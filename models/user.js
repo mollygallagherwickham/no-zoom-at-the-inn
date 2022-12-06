@@ -6,7 +6,9 @@ const UserSchema = new mongoose.Schema({
   email: String,
   password: String,
   friends: { type: Array, default: [] },
-  dietary_requirements: { type: Array, default: [] },
+
+  dietary_requirements: { type: String, default: "None" },
+
   wish_list: { type: Array, default: [] }
 })
 

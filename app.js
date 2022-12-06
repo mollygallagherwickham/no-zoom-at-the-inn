@@ -3,8 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const session = require('express-session');
-const methodOverride = require('method-override')
+var session = require('express-session');
+var methodOverride = require('method-override')
 
 
 var indexRouter = require('./routes/index');
@@ -79,5 +79,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;
