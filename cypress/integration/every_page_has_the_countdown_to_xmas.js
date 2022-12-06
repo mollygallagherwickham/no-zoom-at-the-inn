@@ -3,7 +3,7 @@ describe('Layout page', () => {
         const now = new Date(2022, 11, 24, 1) // month is 0-indexed 
         cy.clock(now)
         cy.visit('/')
-        cy.get('#countdown').contains('1 sleep')
+        cy.get('#countdown').contains('1 Sleep until Christmas')
              
     })
 
@@ -11,7 +11,7 @@ describe('Layout page', () => {
         const now = new Date(2022, 11, 23, 1) // month is 0-indexed 
         cy.clock(now)
         cy.visit('/')
-        cy.get('#countdown').contains('2 sleeps')
+        cy.get('#countdown').contains('2 Sleeps until Christmas')
              
     })
 
