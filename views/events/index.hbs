@@ -1,0 +1,10 @@
+<a class="new-event-link" href="/events/new">Create new event</a>
+
+<ul class="events">
+    {{#each events}}
+<li class="eventNameClass">What?: {{this.eventName}} </li>
+<li>When?: {{this.eventDate}} </li>
+<li>Where?: {{this.location}} </li>
+<li>Who?: {{this.organiser_id.first_name}} </li><br><br>
+    {{/each}}
+</ul>

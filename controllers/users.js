@@ -2,6 +2,7 @@ const User = require('../models/user')
 
 
 const UsersController = {
+  
   New: (req, res) => {
     res.render('users/new', { newUser: true })
   },
@@ -80,6 +81,7 @@ const UsersController = {
         }
       })
     },
+
     Profile: (req, res) => {
         
       User.find({ _id : `${req.session.user._id}`
@@ -103,6 +105,7 @@ const UsersController = {
     },
 
   DietaryRequirements: (req, res) => {
+
     
     User.updateOne({ _id: req.session.user._id }
       , {dietary_requirements: req.body.dietary_requirements})

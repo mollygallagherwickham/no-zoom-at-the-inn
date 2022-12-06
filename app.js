@@ -11,6 +11,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var listsRouter = require('./routes/lists');
 var sessionsRouter = require('./routes/sessions');
+var eventsRouter = require('./routes/events');
 
 var app = express();
 // view engine setup
@@ -60,6 +61,7 @@ const sessionChecker = (req, res, next) => {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/lists', sessionChecker, listsRouter);
+app.use('/events', sessionChecker, eventsRouter);
 app.use('/sessions', sessionsRouter);
 
 // catch 404 and forward to error handler

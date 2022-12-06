@@ -1,5 +1,8 @@
 describe('All users page', () => {
     it('shows all users except current user', () => {
+
+ 
+
         // sign up
       cy.visit("/users/new");
       cy.get("#email").type("sarah@example.com");
@@ -9,6 +12,7 @@ describe('All users page', () => {
       cy.get("#submit").click();
 
       cy.contains('Log Out').click()
+
 
       // sign up
       cy.visit("/users/new");
