@@ -1,7 +1,7 @@
 <a class="new-event-link" href="/events/new">Create new event</a>
 <br>
 <br>
-<input type="button" id="All" name="All" value="All" onclick="all()">
+<input type="button" id="All" name="All" value="All" onclick="buttonclick(event)">
 <input type="button" id="London" name="Londonbut" value="London" onclick="buttonclick(event)">
 <input type="button" id="Sheffield" name="Sheffieldbut" value="Sheffield" onclick="buttonclick(event)">
 <input type="button" id="Birmingham" name="Birminghambut" value="Birmingham" onclick="buttonclick(event)">
@@ -35,23 +35,22 @@
     document.getElementById("Newcastle1").style.display = 'none'
     document.getElementById("Other1").style.display = 'none'
     document.getElementById("Bristol1").style.display = 'none'
-    document.getElementById(hide).style.display = 'block'
+    
 
     if (event.target.id === "All"){
         document.getElementById("info").innerHTML = "Showing all event Locations:"
+        document.getElementById("London1").style.display = 'block'
+        document.getElementById("Sheffield1").style.display = 'block'
+        document.getElementById("Birmingham1").style.display = 'block'
+        document.getElementById("Newcastle1").style.display = 'block'
+        document.getElementById("Other1").style.display = 'block'
+        document.getElementById("Bristol1").style.display = 'block'
     }else if(event.target.id === "Other"){
         document.getElementById("info").innerHTML = "Showing other event Locations:"
+        document.getElementById(hide).style.display = 'block'
     }else {
         document.getElementById("info").innerHTML = "Showing event locations in" + event.target.id + ":"
+        document.getElementById(hide).style.display = 'block'
     }
-   }
-
-   function all(){
-    document.getElementById("London1").style.display = 'block'
-    document.getElementById("Sheffield1").style.display = 'block'
-    document.getElementById("Birmingham1").style.display = 'block'
-    document.getElementById("Newcastle1").style.display = 'block'
-    document.getElementById("Other1").style.display = 'block'
-    document.getElementById("Bristol1").style.display = 'block'
    }
 </script>
