@@ -5,8 +5,18 @@
   <input id="eventName" type="text" name="eventName" value="" required autofocus></input><br>
   <label for="eventDate"> Event date</label><br>
   <input id="eventDate" type="date" name="eventDate" value="" required autofocus></input><br>
-  <label for="location"> Event location</label><br>
-  <input id="location" type="text" name="location" value="" required autofocus></input><br>
+  
+
+  <label for="location">Choose a car:</label>
+  <select name="location" id="location" required>
+    <option value="">Select a location:</option>
+    <option value="London">London</option>
+    <option value="Sheffield">Sheffield</option>
+    <option value="Birmingham">Birmingham</option>
+    <option value="Newcastle">Newcastle</option>
+    <option value="Bristol">Bristol</option>
+    <option value="Other">Other</option>
+  </select>
   <input id="submit" type="submit" value="Submit">
 </form>
 </div>
