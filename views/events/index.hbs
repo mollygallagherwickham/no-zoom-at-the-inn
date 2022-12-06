@@ -2,9 +2,33 @@
 
 <ul class="events">
     {{#each events}}
-<li class="eventNameClass">What?: {{this.eventName}} </li>
-<li>When?: {{this.eventDate}} </li>
-<li>Where?: {{this.location}} </li>
-<li>Who?: {{this.organiser_id.first_name}} </li><br><br>
+    <li class="eventNameClass">What?: {{this.eventName}} </li>
+    <li>When?: {{this.eventDate}} </li>
+    <li>Where?: {{this.location}} </li>
+    <li>Who?: {{this.organiser_id.first_name}} </li>
+    <li>
+        <form action="/events/attend" method = "POST">
+        <input type="hidden" id="{{@index}}" name="id" value={{this.id}}>   
+        <button class='attend-button' id={{this.id}} type="submit"></button>
+        </form>
+    </li>
+    <li class="eventAttendingNumber">{{this.number_attending}} attending</li>
+    
+    <script>
+        id = document.getElementById("{{@index}}").value
+ 
+        $.post('/events/checkattending', {id:id}).done(function(data){
+            if (data.attending === 'true'){
+                document.getElementById(data.id).style = 'background-color:#B3B1B1';
+                document.getElementById(data.id).innerText = 'Unattend';
+            }
+            else if (data.attending === 'false') {
+            document.getElementById(data.id).style= 'background-color:#E3E3E3';
+            document.getElementById(data.id).innerText = 'Attend';
+            }
+        })
+    </script>
+    <br><br>
     {{/each}}
 </ul>
+
