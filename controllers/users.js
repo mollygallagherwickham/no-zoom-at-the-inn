@@ -84,7 +84,7 @@ const UsersController = {
 
     Profile: (req, res) => {
         
-      User.find({ _id : `${req.session.user._id}`
+      User.find({ _id : req.session.user._id
       })
           .exec((err) => {
         if (err) {
@@ -98,15 +98,11 @@ const UsersController = {
           wish_list: req.session.user.wish_list,
           dietary_requirements: req.session.user.dietary_requirements,
           friends: req.session.user.friends
-
-          
         })
       })
     },
 
   DietaryRequirements: (req, res) => {
-
-    
     User.updateOne({ _id: req.session.user._id }
       , {dietary_requirements: req.body.dietary_requirements})
         .exec((err, docs) => {
@@ -119,19 +115,19 @@ const UsersController = {
       }})
     },
 
-    // needs editing!
-    WishList: (req, res) => {
 
+    WishList: (req, res) => {
       User.findOneAndUpdate({ _id: req.session.user._id }
         , { $push: {wish_list: req.body.wish_list}}, { returnNewDocument: true })
           .exec((err, docs) => {
         if (err){
             throw err
         } else {
+          req.session.user.wish_list.push(req.body.wish_list);
           console.log('adding item to wish list')
-          req.session.user.wish_list = req.body.wish_list;
           console.log("Updated Docs : ", docs);
           res.status(200).redirect('/users/profile');
+          //res.render('users/profile', { new_wish_list: req.session.user.wish_list });
         }})
   }
 }
