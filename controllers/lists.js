@@ -47,7 +47,7 @@ const ListsController = {
         
         throw err
       }
-      res.status(200).redirect('/lists')
+      res.status(200).redirect('back')
     })
   },
 
