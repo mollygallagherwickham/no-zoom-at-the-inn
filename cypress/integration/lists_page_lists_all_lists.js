@@ -1,14 +1,7 @@
 describe('Lists page', () => {
   it('lists all the logged in users lists', () => {
-    // sign up
-    cy.visit("/users/new");
-    cy.get("#email").type("someone@example.com");
-    cy.get("#first_name").type("Someone");
-    cy.get("#last_name").type("Example");
-    cy.get("#password").type("Passw0rd!");
-    cy.get("#submit").click();
-
     // sign in
+    cy.visit("/sessions/new");
     cy.get("#email").type("someone@example.com");
     cy.get("#password").type("Passw0rd!");
     cy.get("#submit").click();

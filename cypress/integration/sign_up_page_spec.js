@@ -19,7 +19,7 @@ function random(){
       // the user gets an error message
   
   
-      cy.url().should('include', '/sessions/new')
+      cy.url().should('include', '/')
     })
     
     it('A user can not sign up with the same email twice', () => {
@@ -36,9 +36,6 @@ function random(){
       cy.get('#password').type('pasSword!2')
       cy.get('#submit').click()
       // the user gets an error message
-  
-  
-      cy.url().should('include', '/sessions/new')
 
       cy.visit('/users/new')
       cy.get('#submit').click()
@@ -53,8 +50,7 @@ function random(){
       // the user gets an error message
   
   
-      cy.url().should('include', '/users/new')
+      cy.url().should('include', '/users')
     })
-  
   })
   

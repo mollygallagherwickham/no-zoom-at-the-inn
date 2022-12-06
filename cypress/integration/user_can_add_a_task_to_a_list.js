@@ -28,5 +28,11 @@ describe('When a user has created a list', () => {
         // Click on list to view that list
         cy.contains('Card List').click();
         cy.url().should('include', '/lists/view?');
+        cy.get("#list-container").contains('Card List');
+        cy.get("#list-container").contains('Todo item');
+
+        cy.get(".check").click();
+        cy.reload();
+        cy.get(".check").should('be.checked')
     });
 })
