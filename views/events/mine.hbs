@@ -1,20 +1,41 @@
 <ul>
-{{#each events as |item|}}
+{{!-- {{#each events as |item|}}
   <li>
     {{item.0}}: {{item.1}}
   </li>
-{{/each}}
+{{/each}} --}}
 </ul>
 <br>
 <br>
 <br>
 
+{{#each events }}
+<h2>{{eventName}}</h2>
+<h3>Guests </h3>
+  {{#each (lookup ../arrayOfUsers @index)}}<br>
+  {{first_name}} {{last_name}} <br>
+  Dietary Requirements: {{dietary_requirements}} <br>
+  Wish List: {{wish_list}}
+  <br>
+  {{/each}}
+  <br>
+  <br>
+{{/each}} 
 
 
+<br>
+<br>
 
 
+<script>
+  var events = {{events}};
+  var attendees = {{arrayOfUsers}};
 
+  var merge = events.map((e, i) => e + attendees[i]);
+  console.log(merge)
+</script>
 
+{{!-- 
 
 {{#each events as |item| }}
     {{this.eventName}}<br>
@@ -24,13 +45,13 @@
         {{dietary_requirements}}<br>
     {{/each}}
 {{/each}}
-{{/each}}
+{{/each}} --}}
 
 
 <br>
 <br>
-{{arrayOfUsers}}<br><br>
-{{events}}
+{{!-- {{arrayOfUsers}}<br><br>
+{{events}} --}}
 
 
 
