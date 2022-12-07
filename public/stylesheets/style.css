@@ -13,6 +13,10 @@ a {
   color: #A30120;
 }
 
+.check{
+  accent-color:  #FFD700;
+}
+
 /* The popup form - hidden by default */
 .task-form {
   display: none;
@@ -61,6 +65,7 @@ a {
 
 .snowlink{
   color: white;
+  text-decoration: none;
 }
 
 .snowlink:hover{
@@ -96,6 +101,26 @@ a {
 .sessions-form2{
   background-color: #2f6e2e;
   width: 40%;
+  height: 20%;
+  text-align: center;
+  border-radius: 8px;
+  color: #F8F9F2;
+}
+
+.sessions-form-3{
+  background-color: #2f6e2e;
+  width: 40%;
+  height: 40%;
+  text-align: center;
+  border-radius: 8px;
+  color: #F8F9F2;
+  padding-top: 30px;
+}
+
+
+.sessions-form2{
+  background-color: #2f6e2e;
+  width: 40%;
   height: 60%;
   text-align: center;
   border-radius: 8px;
@@ -110,11 +135,11 @@ a {
   padding-top: 10px;
 }
 
-#submit, .add-task-button, #submit-task, #diet_req_button, #wish_list_button, .submit-but, .attend-button, .friendButton {
+#submit, .add-task-button, #submit-task, #diet_req_button, #wish_list_button, .submit-but, .attend-button, .friendButton, .button {
   background-color: #A30120;
 }
 
-#submit:hover, .add-task-button:hover,  #submit-task:hover, #wish_list_button:hover, #diet_req_button:hover, .submit-but:hover, .attend-button:hover, .friendButton:hover{
+#submit:hover, .add-task-button:hover,  #submit-task:hover, #wish_list_button:hover, #diet_req_button:hover, .submit-but:hover, .attend-button:hover, .friendButton:hover, .button:hover{
   background-color: #A0B095;
 }
 
