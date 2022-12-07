@@ -34,5 +34,9 @@ describe('When a user has created a list', () => {
         cy.get(".check").click();
         cy.reload();
         cy.get(".check").should('be.checked')
+        cy.contains('Add a Task').click();
+        cy.get('#task-name').type('Get lots of food');
+        cy.contains('Submit Task').click();
+        cy.get("#list-container").contains('Get lots of food');
     });
 })
