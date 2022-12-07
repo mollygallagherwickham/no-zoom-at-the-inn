@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+    <link rel="icon" type="image/x-icon" href="/images/sant.gif">
   
 
 
@@ -12,36 +12,59 @@
 
 </head>
 <body>
+    <div class="snowflake">
+  <a class="snowlink" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">❅</a>
+  </div>
+  <div class="snowflake">
+  <a class="snowlink" href="https://www.youtube.com/watch?v=j9jbdgZidu8">❅</a>
+  </div>
+  <div class="snowflake">
+  <a class="snowlink" href="https://www.youtube.com/watch?v=N-PyWfVkjZc">❆</a>
+  </div>
+  <div class="snowflake">
+  <a class="snowlink" href="https://www.youtube.com/watch?v=QQj3XyIOGZs">❄</a>
+  </div>
+  <div class="snowflake">
+  <a class="snowlink" href="https://www.youtube.com/watch?v=z-lw3x7Np1E">❅</a>
+  </div>
+  <div class="snowflake">
+  <a class="snowlink" href="https://www.youtube.com/watch?v=bMjlK8DYf1g">❆</a>
+  </div>
+  <div class="snowflake">
+  <a class="snowlink" href="https://www.youtube.com/watch?v=TN7PBdQu_PY">❄</a>
+  </div>
+  <div class="snowflake">
+  <a class="snowlink" href="https://www.youtube.com/watch?v=j9jbdgZidu8">❅</a>
+  </div>
+  <div class="snowflake">
+  <a class="snowlink" href="https://www.youtube.com/watch?v=j3fSknbR7Y4">❆</a>
+  </div>
+  <div class="snowflake">
+  <a class="snowlink" href="https://www.youtube.com/watch?v=E8gmARGvPlI">❄</a>
+  </div>
+</div>
+
 {{!-- Code for nav bar below --}}
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
         <ul class='nav navbar-nav'>
+            <a href="https://www.youtube.com/watch?v=HSmsq2iq4bQ"> <img class="santa" width="100px" src="/images/beaverclause.png" alt="" /></a>
             <li><a id='nav-home' href="/">Home</a></li>
             {{#if newUser}}
             <li><a id='login-link' href="/sessions/new">Login</a></li>
             <li><a id='signup-link' href="/users/new">Sign up</a></li>
         </ul>
             {{else}} 
-            <li><a id='lists-link' href="/lists">Lists</a></li>
-            <li><a id='add-friends-link' href="/users/all">All users</a></li>
+            <li><a  id='lists-link' href="/lists">Lists</a></li>
+            <li><a  id='add-friends-link' href="/users/all">All users</a></li>
 
-            <li><a id='events-link' href="/events">Events</a></li>
+            <li><a  id='events-link' href="/events">Events</a></li>
             
-            {{!-- <div class="dropdown">
-                <button class="dropbtn">Events
-                <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                <a href="/events/mine">My Events</a>
-                <a href="/events">All Events</a>
-                <a href="events/new">Create an Event</a>
-                </div>
-            </div> --}}
-
 
             <li><a id='songs-link' href="/songs">Songs</a></li>
             
             <li><a id='profile-link' href="/users/profile">Profile</a></li>
+
             <li><p id='countdown' class="countdowns"></p></li>
 
 
