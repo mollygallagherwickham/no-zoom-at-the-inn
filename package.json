@@ -6,7 +6,7 @@
     "start": "nodemon ./bin/www",
     "test": "npm run test:unit && npm run test:integration",
     "test:integration": "cypress run",
-    "test:current": "npm run test:unit && cypress run --spec cypress/integration/user_can_add_a_task_to_a_list.js",
+    "test:current": "npm run test:unit && cypress run --spec cypress/integration/user_can_add_a_friend.js",
     "test:unit": "jest",
     "start:test": "PORT=3030 MONGODB_URL='mongodb://0.0.0.0/makersmas_test' npm start"
   },
