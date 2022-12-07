@@ -5,6 +5,22 @@
 {{#each events}}
     {{current_session}}
 {{/each}}
+
+<br>
+<br>
+<input type="button" id="All" name="All" value="All" onclick="buttonclick(event)">
+<input type="button" id="London" name="Londonbut" value="London" onclick="buttonclick(event)">
+<input type="button" id="Sheffield" name="Sheffieldbut" value="Sheffield" onclick="buttonclick(event)">
+<input type="button" id="Birmingham" name="Birminghambut" value="Birmingham" onclick="buttonclick(event)">
+<input type="button" id="Newcastle" name="Newcastlebut" value="Newcastle" onclick="buttonclick(event)">
+<input type="button" id="Bristol" name="Bristolbut" value="Bristol" onclick="buttonclick(event)">
+<input type="button" id="Other" name="Otherbut" value="Other" onclick="buttonclick(event)">
+<br>
+<br>
+
+<p id="info">Showing all Locations:</p>
+
+
 <h2>All Events</h2>
 
 <ul class="events">
@@ -21,6 +37,7 @@
         </form>
     </li>
     <li class="eventAttendingNumber">{{this.number_attending}} attending</li>
+    
     
     <script>
         id = document.getElementById("{{@index}}").value
@@ -42,22 +59,10 @@
         <li class="commenter-comment">{{this.attendees}}</li><br>
       {{/each}}
     </div>
+    </div>
     {{/each}}
 </ul>
 
-<br>
-<br>
-<input type="button" id="All" name="All" value="All" onclick="buttonclick(event)">
-<input type="button" id="London" name="Londonbut" value="London" onclick="buttonclick(event)">
-<input type="button" id="Sheffield" name="Sheffieldbut" value="Sheffield" onclick="buttonclick(event)">
-<input type="button" id="Birmingham" name="Birminghambut" value="Birmingham" onclick="buttonclick(event)">
-<input type="button" id="Newcastle" name="Newcastlebut" value="Newcastle" onclick="buttonclick(event)">
-<input type="button" id="Bristol" name="Bristolbut" value="Bristol" onclick="buttonclick(event)">
-<input type="button" id="Other" name="Otherbut" value="Other" onclick="buttonclick(event)">
-<br>
-<br>
-
-<p id="info">Showing all Locations:</p>
 
 
 
@@ -75,7 +80,7 @@
 
     if (event.target.id === "All"){
     document.getElementById("info").innerHTML = "Showing all event Locations:"
-    var x = document.getElementsByClassName(event.target.id + "1");
+    var x = document.getElementsByClassName("loca");
     var i;
     for (i = 0; i < x.length; i++) {
         x[i].style.display = 'block';
