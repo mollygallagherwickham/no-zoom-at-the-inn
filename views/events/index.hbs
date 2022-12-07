@@ -16,7 +16,7 @@
 
 <ul class="events">
     {{#each events}}
-    <div id={{this.location}}1>
+    <div class="loca {{this.location}}1">
 <li class="eventNameClass">What?: {{this.eventName}} </li>
 <li>When?: {{this.eventDate}} </li>
 <li>Where?: {{this.location}} </li>
@@ -29,28 +29,36 @@
    function buttonclick(event){
     let hide = event.target.id + 1
     console.log(hide)
-    document.getElementById("London1").style.display = 'none'
-    document.getElementById("Sheffield1").style.display = 'none'
-    document.getElementById("Birmingham1").style.display = 'none'
-    document.getElementById("Newcastle1").style.display = 'none'
-    document.getElementById("Other1").style.display = 'none'
-    document.getElementById("Bristol1").style.display = 'none'
+    var x = document.getElementsByClassName("loca");
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = 'none';
+    }
     
 
     if (event.target.id === "All"){
-        document.getElementById("info").innerHTML = "Showing all event Locations:"
-        document.getElementById("London1").style.display = 'block'
-        document.getElementById("Sheffield1").style.display = 'block'
-        document.getElementById("Birmingham1").style.display = 'block'
-        document.getElementById("Newcastle1").style.display = 'block'
-        document.getElementById("Other1").style.display = 'block'
-        document.getElementById("Bristol1").style.display = 'block'
+    document.getElementById("info").innerHTML = "Showing all event Locations:"
+    var x = document.getElementsByClassName(event.target.id + "1");
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = 'block';
+    }
+    
     }else if(event.target.id === "Other"){
+        console.log(event.target.id + "1")
         document.getElementById("info").innerHTML = "Showing other event Locations:"
-        document.getElementById(hide).style.display = 'block'
+           var x = document.getElementsByClassName(event.target.id + "1");
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = 'block';
+    }
     }else {
         document.getElementById("info").innerHTML = "Showing event locations in " + event.target.id + ":"
-        document.getElementById(hide).style.display = 'block'
+           var x = document.getElementsByClassName(event.target.id + "1");
+    var i;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = 'block';
+    }
     }
    }
 </script>
