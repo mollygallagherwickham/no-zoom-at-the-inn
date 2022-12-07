@@ -75,19 +75,26 @@ const EventsController = {
         })
       },
 
-      MyEvents: (req, res) => {
-        Event.find({ organiser_id : `${req.session.user._id}`
-        }).sort({eventDate:1}).populate('organiser_id')
-            .exec((err, events) => {
-          if (err) {
-            throw err
-          }
-          res.render('events/mine', { events, 
-            current_organiser: req.session.user.first_name, 
-            current_session: req.session.user._id })
+       MyEvents: (req, res) => {
+        Event.find({
+          organiser_id : `${req.session.user._id}`
+          }).sort({eventDate:1}).populate('organiser_id').exec(async(err, events) => {
+            if (err) {
+              throw err
+            } const arrayOfUsers = [];
+            for(const event of events){
+              const resultUsers = await User.find({_id : { $in: event.attendees} })
+              arrayOfUsers.push(resultUsers)
+              console.log("inside for each")
+            }
+              console.log(arrayOfUsers)
+              res.render('events/mine', { events, arrayOfUsers,
+              current_organiser: req.session.user.first_name, 
+              current_session: req.session.user._id })
           
         })
-      }
+      },
+
 }
 
 module.exports = EventsController;

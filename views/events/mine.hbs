@@ -1,7 +1,36 @@
-{{#each events}}
-    {{this.eventName}}
+<ul>
+{{#each events as |item|}}
+  <li>
+    {{item.0}}: {{item.1}}
+  </li>
+{{/each}}
+</ul>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+{{#each events as |item| }}
+    {{this.eventName}}<br>
+    {{#each arrayOfUsers}}
+    {{#each this}}
+        {{first_name}} {{last_name}}<br>
+        {{dietary_requirements}}<br>
+    {{/each}}
+{{/each}}
 {{/each}}
 
-{{#each users}}
-    {{this}}
-{{/each}}
+
+<br>
+<br>
+{{arrayOfUsers}}<br><br>
+{{events}}
+
+
+

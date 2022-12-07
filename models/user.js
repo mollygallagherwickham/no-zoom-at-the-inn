@@ -10,6 +10,7 @@ const UserSchema = new mongoose.Schema({
   dietary_requirements: { type: String, default: "None" },
 
   wish_list: { type: Array, default: [] },
+  event_id: { type: Array, default: [] }
   // events: [{type: mongoose.Schema.Types.ObjectId, ref: 'Event' }],
 })
 
