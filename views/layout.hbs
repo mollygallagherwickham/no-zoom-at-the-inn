@@ -12,22 +12,53 @@
 
 </head>
 <body>
+    <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  </div>
+  <div class="snowflake">
+  ❅
+  </div>
+  <div class="snowflake">
+  ❆
+  </div>
+  <div class="snowflake">
+  ❄
+  </div>
+</div>
 {{!-- Code for nav bar below --}}
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
         <ul class='nav navbar-nav'>
             <li><a id='nav-home' href="/">Home</a></li>
             {{#if newUser}}
-            <li><a id='login-link' href="/sessions/new">Login</a></li>
-            <li><a id='signup-link' href="/users/new">Sign up</a></li>
+            <li><a class="nav" id='login-link' href="/sessions/new">Login</a></li>
+            <li><a class="nav" id='signup-link' href="/users/new">Sign up</a></li>
         </ul>
             {{else}} 
-            <li><a id='lists-link' href="/lists">Lists</a></li>
-            <li><a id='add-friends-link' href="/users/all">All users</a></li>
+            <li><a class="nav" id='lists-link' href="/lists">Lists</a></li>
+            <li><a class="nav" id='add-friends-link' href="/users/all">All users</a></li>
 
-            <li><a id='events-link' href="/events">Events</a></li>
+            <li><a class="nav" id='events-link' href="/events">Events</a></li>
             
-            <li><a id='profile-link' href="/users/profile">Profile</a></li>
+            <li><a class="nav" id='profile-link' href="/users/profile">Profile</a></li>
             <li><p id='countdown' class="countdowns"></p></li>
 
 

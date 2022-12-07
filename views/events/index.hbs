@@ -1,20 +1,21 @@
-<a class="new-event-link" href="/events/new">Create new event</a>
+<center>
+<a class="new-event-link" href="/events/new"><h3>Create new event</h3></a>
 
 <h2>My Events</h2>
-{{current_session}}
+
 {{#each events}}
     {{current_session}}
 {{/each}}
 
 <br>
 <br>
-<input type="button" id="All" name="All" value="All" onclick="buttonclick(event)">
-<input type="button" id="London" name="Londonbut" value="London" onclick="buttonclick(event)">
-<input type="button" id="Sheffield" name="Sheffieldbut" value="Sheffield" onclick="buttonclick(event)">
-<input type="button" id="Birmingham" name="Birminghambut" value="Birmingham" onclick="buttonclick(event)">
-<input type="button" id="Newcastle" name="Newcastlebut" value="Newcastle" onclick="buttonclick(event)">
-<input type="button" id="Bristol" name="Bristolbut" value="Bristol" onclick="buttonclick(event)">
-<input type="button" id="Other" name="Otherbut" value="Other" onclick="buttonclick(event)">
+<input type="button" class="submit-but" id="All" name="All" value="All" onclick="buttonclick(event)">
+<input type="button" class="submit-but" id="London" name="Londonbut" value="London" onclick="buttonclick(event)">
+<input type="button" class="submit-but" id="Sheffield" name="Sheffieldbut" value="Sheffield" onclick="buttonclick(event)">
+<input type="button" class="submit-but" id="Birmingham" name="Birminghambut" value="Birmingham" onclick="buttonclick(event)">
+<input type="button" class="submit-but" id="Newcastle" name="Newcastlebut" value="Newcastle" onclick="buttonclick(event)">
+<input type="button" class="submit-but" id="Bristol" name="Bristolbut" value="Bristol" onclick="buttonclick(event)">
+<input type="button" class="submit-but" id="Other" name="Otherbut" value="Other" onclick="buttonclick(event)">
 <br>
 <br>
 
@@ -104,3 +105,4 @@
     }
    }
 </script>
+</center>

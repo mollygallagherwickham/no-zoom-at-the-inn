@@ -15,7 +15,7 @@
         <div id="add-task-form" class="task-form">
             <form action="/lists/tasks" method="post">
                 <label for="task-name">Task</label>
-                <input id="task-name" type="text" name="tasks" value="" required>
+                <input class="input" id="task-name" type="text" name="tasks" value="" required>
                 <input type="hidden" id="listId" name="listId" value="{{list._id}}">
                 <button id="submit-task" type="submit" onclick="closeForm()">Submit Task</button>   
             </form>
