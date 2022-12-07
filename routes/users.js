@@ -9,8 +9,9 @@ router.get('/new', UsersController.New)
 router.get('/all', UsersController.All)
 router.post('/addfriend', UsersController.AddFriend)
 router.get('/profile', UsersController.Profile)
-router.post('/dietaryrequirements', UsersController.DietaryRequirements)
 router.post('/wishlist', UsersController.WishList)
+router.post('/dietaryrequirements', UsersController.DietaryRequirements)
+
 router.post('/', UsersController.Create)
 
 

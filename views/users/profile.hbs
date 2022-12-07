@@ -1,28 +1,30 @@
 
-<h1>{{ first_name }} </h1>
+<h1>Your profile</h1>
 
 
-
-<p>Current dietary requirements: 
+<p>Dietary requirements: 
     {{dietary_requirements}}</p>
 
     <br>
   
     <form id="dietary_requirements" action="/users/dietaryrequirements" method="post" enctype=="multipart/form-data">
-        <label for="dietary_requirements">Enter dietary requirements: </label>
-        <textarea placeholder="Edit your dietary requirements" id="message" type="text" name="dietary_requirements" value=""rows="1" cols="50"></textarea>
+        <label for="dietary_requirements">Edit your dietary requirements: </label>
+        <textarea placeholder="E.g. Vegetarian" id="message" type="text" name="dietary_requirements" value=""rows="1" cols="50"></textarea>
         <br><button type="submit" id="diet_req_button">Submit</button>
         </form>
 
 
-<p>Current wish list: 
-    {{wish_list}}
+<p>Your wish list: 
     {{#each wish_list}}
     <li>{{this}}</li>
     {{/each}}
-    <form id="wish_list" action="/users/wishlist" method="post" enctype="multipart/form-data">
+
+
+
+
+    <form id="wish_list" action="/users/wishlist" method="post">
         <label for="wish_list">Enter an item: </label>
-        <textarea placeholder="Edit your wish list" id="message" type="text" name="wish_list" value=""rows="1" cols="50"></textarea>
+        <textarea placeholder="E.g. Socks" id="message" type="text" name="wish_list" value=""rows="1" cols="50"></textarea>
         <br><button type="submit" id="wish_list_button">Submit</button>
         </form>
 
