@@ -3,21 +3,10 @@
 <p>Song Title: {{this.songTitle}}</p>
 <p>Artist Name: {{this.artistName}}</p>
 <p>Votes: {{this.votes}}</p>
-<button onclick="updateDB('{{this._id}}')">Vote</button>
+<form action="/songs/vote" method = "POST">
+    <input type="hidden" id="{{@index}}" name="id" value={{this.id}}>   
+    <button class='button' id={{this.id}} type="submit">Vote</button>
+</form>
 <br>
 {{/each}}
 <br>
-
-<script>
-  function updateDB(id) {
-    let data = { _id: id };
-
-    fetch("/songs/vote", {
-      method: "POST",
-      headers: {'Content-Type': 'application/json'}, 
-      body: JSON.stringify(data)
-    }).then(res => {
-      console.log("Request complete! response:", res);
-    });
-  }
-</script>

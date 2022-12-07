@@ -7,7 +7,7 @@ const SongsController = {
             if (err) {
                 throw err
             }
-            res.render('songs/index', { songs })
+            res.render('songs/index', { songs: songs })
         })
     },
 
@@ -21,7 +21,6 @@ const SongsController = {
           songTitle: req.body.songTitle,
           artistName: req.body.artistName,
         })
-        console.log(song)
         // if there's an error, returns error and redirects to homepage
         if (song.songTitle != "") {
             song.save((err) => {
@@ -36,11 +35,20 @@ const SongsController = {
     },
 
     Vote: (req, res) => {
-        Song.findOneAndUpdate({ _id: req.body.id }, { $inc: { votes: 1 }, $push: {voters: req.session.user._id}}).exec((err) => {
+        Song.exists({ voters: `${req.session.user._id}` }).exec((err, result) => {
             if (err) {
                 throw err
-              }
-              res.status(200).redirect('back')
+            }
+            if(result) {
+                res.status(201).redirect('back')
+            } else {
+                Song.findOneAndUpdate({ _id: req.body.id }, { $inc: { votes: 1 }, $push: { voters: req.session.user._id }}).exec((err) => {
+                    if (err) {
+                        throw err
+                      }
+                      res.status(200).redirect('back')
+                })
+            }
         })
     }
 }
