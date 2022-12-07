@@ -1,3 +1,5 @@
+// const { it } = require("mocha");
+
 describe('Logged in user', () => {
     it('can go to the events page', () => {
       // sign in
@@ -60,4 +62,27 @@ describe('Logged in user', () => {
       cy.get("#submit").click();
       cy.get('.eventNameClass').eq(0).should('contain.text', 'Christmas');
   })
+
+    it('shows 0 attending when new event added', () => {
+      // sign in
+      cy.visit("/sessions/new");
+      cy.get("#email").type("someone@example.com");
+      cy.get("#password").type("Passw0rd!");
+      cy.get("#submit").click();
+
+      cy.visit("/events");
+      cy.get('.eventAttendingNumber').eq(0).should('contain', '0 attending');
+    })
+
+    it('shows 1 attending when someone clicks attend', () => {
+      // sign in
+      cy.visit("/sessions/new");
+      cy.get("#email").type("someone@example.com");
+      cy.get("#password").type("Passw0rd!");
+      cy.get("#submit").click();
+
+      cy.visit("/events");
+      cy.get(".attend-button").first().click();
+      cy.get('.eventAttendingNumber').should('contain', '1 attending');
+    })
 })

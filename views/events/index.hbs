@@ -1,4 +1,50 @@
 <a class="new-event-link" href="/events/new">Create new event</a>
+
+<h2>My Events</h2>
+{{current_session}}
+{{#each events}}
+    {{current_session}}
+{{/each}}
+<h2>All Events</h2>
+
+<ul class="events">
+    {{#each events}}
+    <div class="loca {{this.location}}1">
+    <li class="eventNameClass">What?: {{this.eventName}} </li>
+    <li>When?: {{this.eventDate}} </li>
+    <li>Where?: {{this.location}} </li>
+    <li>Who?: {{this.organiser_id.first_name}} </li>
+    <li>
+        <form action="/events/attend" method = "POST">
+        <input type="hidden" id="{{@index}}" name="id" value={{this.id}}>   
+        <button class='attend-button' id={{this.id}} type="submit"></button>
+        </form>
+    </li>
+    <li class="eventAttendingNumber">{{this.number_attending}} attending</li>
+    
+    <script>
+        id = document.getElementById("{{@index}}").value
+ 
+        $.post('/events/checkattending', {id:id}).done(function(data){
+            if (data.attending === 'true'){
+                document.getElementById(data.id).style = 'background-color:#B3B1B1';
+                document.getElementById(data.id).innerText = 'Unattend';
+            }
+            else if (data.attending === 'false') {
+            document.getElementById(data.id).style= 'background-color:#E3E3E3';
+            document.getElementById(data.id).innerText = 'Attend';
+            }
+        })
+    </script>
+    <br><br>
+    <div class="comments">
+      {{#each this.attendees}}
+        <li class="commenter-comment">{{this.attendees}}</li><br>
+      {{/each}}
+    </div>
+    {{/each}}
+</ul>
+
 <br>
 <br>
 <input type="button" id="All" name="All" value="All" onclick="buttonclick(event)">
@@ -14,16 +60,7 @@
 <p id="info">Showing all Locations:</p>
 
 
-<ul class="events">
-    {{#each events}}
-    <div class="loca {{this.location}}1">
-<li class="eventNameClass">What?: {{this.eventName}} </li>
-<li>When?: {{this.eventDate}} </li>
-<li>Where?: {{this.location}} </li>
-<li>Who?: {{this.organiser_id.first_name}} </li><br><br>
-</div>
-    {{/each}}
-</ul>
+
 
 <script>
    function buttonclick(event){

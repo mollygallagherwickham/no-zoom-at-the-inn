@@ -9,7 +9,8 @@ const UserSchema = new mongoose.Schema({
 
   dietary_requirements: { type: String, default: "None" },
 
-  wish_list: { type: Array, default: [] }
+  wish_list: { type: Array, default: [] },
+  // events: [{type: mongoose.Schema.Types.ObjectId, ref: 'Event' }],
 })
 
 const User = mongoose.model('User', UserSchema)
