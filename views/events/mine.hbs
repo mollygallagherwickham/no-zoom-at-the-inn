@@ -15,7 +15,10 @@
   {{#each (lookup ../arrayOfUsers @index)}}<br>
   {{first_name}} {{last_name}} <br>
   Dietary Requirements: {{dietary_requirements}} <br>
-  Wish List: {{wish_list}}
+  Wish List: 
+  {{#each wish_list}}
+  <li>{{this}}</li>
+  {{/each}}
   <br>
   {{/each}}
   <br>
@@ -23,35 +26,10 @@
 {{/each}} 
 
 
-<br>
-<br>
-
-
-<script>
-  var events = {{events}};
-  var attendees = {{arrayOfUsers}};
-
-  var merge = events.map((e, i) => e + attendees[i]);
-  console.log(merge)
-</script>
-
-{{!-- 
-
-{{#each events as |item| }}
-    {{this.eventName}}<br>
-    {{#each arrayOfUsers}}
-    {{#each this}}
-        {{first_name}} {{last_name}}<br>
-        {{dietary_requirements}}<br>
-    {{/each}}
-{{/each}}
-{{/each}} --}}
 
 
 <br>
 <br>
-{{!-- {{arrayOfUsers}}<br><br>
-{{events}} --}}
 
 
 
