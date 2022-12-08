@@ -59,6 +59,15 @@ a {
   color: #F8F9F2;
 }
 
+.sessions-form-2{
+  background-color: #2f6e2e;
+  width: 40%;
+  height: 55%;
+  text-align: center;
+  border-radius: 8px;
+  color: #F8F9F2;
+}
+
 .navbar-default .navbar-nav>li>a {
   color: #F8F9F2;
 }
