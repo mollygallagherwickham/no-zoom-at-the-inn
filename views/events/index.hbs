@@ -1,7 +1,24 @@
 <center>
-<a class="new-event-link" href="/events/new"><h3>Create new event</h3></a>
+<h1>Events</h1>
+
+<a class="new-event-link" href="/events/new">Create New Event</a>
+
+<br>
+<br>
 
 <h2>My Events:</h2>
+
+{{current_session}}
+{{#each events}}
+    {{current_session}}
+{{/each}}
+<br>
+<br>
+<a href="/events/mine">More Details on my Events</a>
+<br>
+<br>
+
+
 
 <br>
 <br>
@@ -17,7 +34,8 @@
 
 <p id="info">Showing all Locations:</p>
 
-
+<br>
+<br>
 <h2>All Events</h2>
 
 <ul class="events">
