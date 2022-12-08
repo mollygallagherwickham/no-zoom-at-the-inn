@@ -230,3 +230,87 @@ color: #000;
 
     100%  {left:1500px; top:00px;}
   }
+
+  /* Main Heading */
+
+  #main-heading-div {
+    text-align: center;
+  }
+  #main-heading {
+    font-family: 'Mountains of Christmas';
+    font-size: 150px;
+    display: inline-block;
+    
+
+  }
+
+  #holly-img-L {
+    width: 10%;
+    rotate: 300deg;
+  }
+  #holly-img-R {
+    width: 10%;
+    rotate: 30deg;
+  }
+
+  /* Coundown */
+  #countdown-scroll {
+    border: 2px solid;
+    height: 60px;
+    border-color: #2f6e2e;
+    border-radius: 10px;
+    background-color: #8ca979;
+    box-shadow: #2F6E2E;
+    overflow: hidden;
+    
+  }
+  #countdown {
+    font-family: 'Mountains of Christmas';
+    color: #A30120;
+    text-align: center;
+    font-size: 50px;
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    
+    -moz-animation: my-animation 15s linear infinite;
+    -webkit-animation: my-animation 15s linear infinite;
+    animation: my-animation 15s linear infinite;
+
+  }
+    @-webkit-keyframes my-animation {
+      from { -webkit-transform: translateX(100%); }
+      to { -webkit-transform: translateX(-100%); }
+    }
+  
+    @keyframes my-animation {
+      from {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+      }
+      to {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+       transform: translateX(-100%);
+      }
+    }
+
+    /* Welcome Messages */
+    #pre-welcome {
+      font-size: 30px;
+      font-family: 'Mountains of Christmas';
+    }
+
+    #welcome-message {
+      text-align: center;
+      display: inline-block;
+    }
+    .hey-user {
+      font-family: 'Mountains of Christmas';
+      font-size: 50px;
+    }
+
+    #santa-welcome-image {
+      width: 10%;
+    }

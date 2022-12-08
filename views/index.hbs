@@ -1,7 +1,18 @@
+<br>
+<br>
+<br>
+
+
 
 {{#if newUser}}
- <h2> Welcome! Please log in.</h2>
+ <h2 id="pre-welcome"><a href="/users/new">Sign Up</a> or <a href="/sessions/new">Log In</a> to stay organised, attend events and keep on top of your holiday preparations.</h2>
  {{else}}
- <h2> Hey, {{current_user}}.</h2>
+ <div id="welcome-message">
+    <img id="santa-welcome-image" src="images/santa-welcome.png">
+    <h2 class="hey-user">Hey, {{current_user}}.</h2>
+ </div>
+ 
  {{/if}}
+
+
 
