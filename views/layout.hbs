@@ -57,9 +57,27 @@
             {{else}} 
             <li><a  id='lists-link' href="/lists">Lists</a></li>
             <li><a  id='add-friends-link' href="/users/all">All users</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Events
+            </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="/events">All Events</a></li>
+            <li><a class="dropdown-item" href="/events/mine">My Events</a></li>
+            <li><a class="dropdown-item" href="/events/new">Add new event</a></li>
+          </ul>
+        </li>
 
-            <li><a  id='events-link' href="/events">Events</a></li>
-            
+
+
+
+
+
+
+
+
+
+
 
             <li><a id='songs-link' href="/songs">Songs</a></li>
             
@@ -67,8 +85,8 @@
 
             <li><p id='countdown' class="countdowns"></p></li>
 
-
         </ul>
+
         <div class ="logOutButton"><form class="form-inline" action='/sessions?_method=DELETE' method='POST'><input  class="logout-input" type="submit" value="Log Out"></form></div> 
         {{/if}}
         </div>
