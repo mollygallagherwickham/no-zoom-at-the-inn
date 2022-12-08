@@ -20,19 +20,19 @@ const seedSong = [
     songTitle: 'Fairytale of New York',
     artistName: 'Kirsty MacColl',
     votes: 0,
-    voters: []
+    voters: ["638a268f62aa60a6cbe2b72e", "638a21d4ea605663c24851e1"]
   },
   {
     songTitle: 'Last Christmas',
     artistName: 'Wham!',
     votes: 0,
-    voters: []
+    voters: ["638a30b3cba077b39a384827", "638a32f7c0decb6dfd0e12a2"]
   },
   {
     songTitle: 'Jingle Bell Rock',
     artistName: 'Bobby Helms',
     votes: 0,
-    voters: []
+    voters: ["638a32f7c0decb6dfd0e12a3"]
   },
   {
     songTitle: "Do They Know It's Christmas?",
@@ -44,7 +44,7 @@ const seedSong = [
     songTitle: "Wonderful Christmas Time",
     artistName: 'Paul McCartney',
     votes: 0,
-    voters: []
+    voters: ["638890d40edc1bb3f22b1e5f"]
   },
   {
     songTitle: "Grandma Got Run Over by a Reindeer",
@@ -74,7 +74,7 @@ const seedSong = [
     songTitle: "Holly Jolly Christmas",
     artistName: 'Michael Bublé',
     votes: 0,
-    voters: []
+    voters: ["6390cbf6ffe23828ebb7c9c3"]
   }
 ];
 
@@ -113,7 +113,7 @@ const seedUser = [
       "6389e36c43aa1ab885e2db23"
     ],
     dietary_requirements: "None",
-    wish_list: [""],
+    wish_list: [],
   },
 
   {
