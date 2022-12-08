@@ -1,9 +1,9 @@
 <center>
-<h1>Your profile</h1>
+<h1>Your Profile</h1>
 <br>
-<div class="sessions-form1">
+<div class="profile-form">
     <br>
-<p>Dietary requirements: {{dietary_requirements}}</p>
+<p>Dietary Requirements: {{dietary_requirements}}</p>
   
     <form id="dietary_requirements" action="/users/dietaryrequirements" method="post" enctype=="multipart/form-data">
         <label for="dietary_requirements">Edit your dietary requirements: </label>
@@ -16,9 +16,9 @@
 <br>
 <br>
 
-<div class="sessions-form1">
+<div class="profile-form">
     <br>
-<p>Your wish list: 
+<p>Your Wish List: 
     {{#each wish_list}}
     <li>{{this}}</li>
     {{/each}}
@@ -34,5 +34,6 @@
         <button type="submit" id="wish_list_button">Submit</button>
         </form>    
     </div>
+
 </center>
 

@@ -1,3 +1,4 @@
+<center>
 <div id="list-container">
   <h1>{{list.listName}}</h1>
    {{#each list.tasks}}
@@ -11,6 +12,7 @@
       <label for="check{{this._id}}"> {{this.task}}</label><br>
     </div>
     {{/each}}
+    <br>
     <button class="add-task-button" onclick="openForm()">Add a Task</button>
         <div id="add-task-form" class="task-form">
             <form action="/lists/tasks" method="post">
@@ -21,6 +23,7 @@
             </form>
         </div>
 </div>
+</center>
 
 <script>
   function updateDB(id) {
