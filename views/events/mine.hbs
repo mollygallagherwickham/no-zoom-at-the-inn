@@ -17,12 +17,22 @@
   {{#each (lookup ../arrayOfUsers @index)}}<br>
   {{first_name}} {{last_name}} <br>
   Dietary Requirements: {{dietary_requirements}} <br>
-  Wish List: {{wish_list}}
+  Wish List: 
+  {{#each wish_list}}
+  <li>{{this}}</li>
+  {{/each}}
   <br>
   {{/each}}
   <br>
   <br>
 {{/each}} 
+
+
+
+
+
+<br>
+<br>
 
 
 
