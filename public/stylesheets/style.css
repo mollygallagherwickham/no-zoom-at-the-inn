@@ -59,10 +59,17 @@ a {
   color: #F8F9F2;
 }
 
+
 .sessions-form-2{
   background-color: #2f6e2e;
   width: 40%;
   height: 55%;
+
+.lists-form{
+  background-color: #2f6e2e;
+  width: 40%;
+  height: 40%;
+
   text-align: center;
   border-radius: 8px;
   color: #F8F9F2;
@@ -93,11 +100,38 @@ a {
   padding-top: 20px;
 }
 
+.new-user-form{
+  background-color: #2f6e2e;
+  width: 40%;
+  height: 65%;
+  text-align: center;
+  border-radius: 8px;
+  color: #F8F9F2;
+}
+
+.list-index-form{
+  background-color: #2f6e2e;
+  width: 40%;
+  height: 15%;
+  text-align: center;
+  border-radius: 8px;
+  color: #F8F9F2;
+}
+
+.events-form{
+  background-color: #2f6e2e;
+  width: 40%;
+  height: 40%;
+  text-align: center;
+  border-radius: 8px;
+  color: #F8F9F2;
+}
+
 #dietary_requirements{
   padding-bottom: 10px;
 }
 
-.sessions-form1{
+.index-form{
   background-color: #2f6e2e;
   width: 40%;
   height: 20%;
@@ -106,6 +140,23 @@ a {
   color: #F8F9F2;
 }
 
+.all-users-form{
+  background-color: #2f6e2e;
+  width: 40%;
+  height: 20%;
+  text-align: center;
+  border-radius: 8px;
+  color: #F8F9F2;
+}
+
+.profile-form{
+  background-color: #2f6e2e;
+  width: 40%;
+  height: 25%;
+  text-align: center;
+  border-radius: 8px;
+  color: #F8F9F2;
+}
 
 .sessions-form2{
   background-color: #2f6e2e;
@@ -116,7 +167,7 @@ a {
   color: #F8F9F2;
 }
 
-.sessions-form-3{
+.songs-form{
   background-color: #2f6e2e;
   width: 40%;
   height: 40%;
@@ -125,6 +176,8 @@ a {
   color: #F8F9F2;
   padding-top: 30px;
 }
+
+
 
 
 .sessions-form2{

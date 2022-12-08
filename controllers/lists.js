@@ -12,7 +12,12 @@ const ListsController = {
       if (err) {
         throw err;
       }
-      res.render("lists/index", { lists: mylists });
+      if (mylists.length==0) {
+        headingText = "You have not got a list yet."
+      } else {
+        headingText = "Your lists:"
+      };
+      res.render("lists/index", { lists: mylists, headingText: headingText });
     });
   },
   
