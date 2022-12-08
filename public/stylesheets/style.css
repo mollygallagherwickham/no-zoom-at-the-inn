@@ -42,7 +42,6 @@ a {
   display: block;
   font-size: 90%;
   background-color: #A30120;
-  width: 80px;
 }
 
 .navbar-nav li ul li:hover {
@@ -106,7 +105,7 @@ a {
   background-color: #2f6e2e;
   width: 40%;
   height: 55%;
-
+}
 .lists-form{
   background-color: #2f6e2e;
   width: 40%;
@@ -278,7 +277,6 @@ ul {
 .intro,
 .intro a{
   color:#fff;
-  font-family:
 }
 /* customizable snowflake styling */
 .snowflake {

@@ -1,17 +1,10 @@
 <center>
 <h1>My Events</h1>
-<ul>
-{{!-- {{#each events as |item|}}
-  <li>
-    {{item.0}}: {{item.1}}
-  </li>
-{{/each}} --}}
-</ul>
-<br>
 <br>
 <br>
 
 {{#each events }}
+<div class="form1">
 <h2>{{eventName}}</h2>
 <h3>Guests </h3>
   {{#each (lookup ../arrayOfUsers @index)}}<br>
@@ -25,7 +18,9 @@
   {{/each}}
   <br>
   <br>
+  </div>
 {{/each}} 
+
 
 
 

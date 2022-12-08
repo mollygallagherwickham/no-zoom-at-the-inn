@@ -9,13 +9,13 @@
 {{#each users}}
 <div class="all-users-form">
     <br>
-    <br>
 <li>{{this.first_name}} {{this.last_name}}</li>
 <form action="/users/addfriend" method = "POST">
     <input type="hidden" id={{@index}} name="id" value={{this.id}}>
     <br>
     <button class="friendButton" id={{this.id}} type="submit">{{this.buttonText}}</button>
 </form>
+<br>
 </div>
 <br>
 <br>
